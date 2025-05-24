@@ -1,0 +1,8 @@
+##Replace oinkcode with your actual Snort oinkcode.##
+rule_url=https://www.snort.org/rules/snortrules-snapshot-29120.tar.gz|oinkcode|snortrules-snapshot-29120.tar.gz
+local_rules=/etc/snort/rules/local.rules
+sid_msg=/etc/snort/sid-msg.map
+snort_path=/usr/local/bin/snort
+config_path=/etc/snort/snort.lua
+rule_path=/etc/snort/rules/snort3-community.rules
+distro=Ubuntu-22-04

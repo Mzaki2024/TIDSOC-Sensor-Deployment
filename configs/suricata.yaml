@@ -1,0 +1,19 @@
+vars:
+  address-groups:
+    HOME_NET: "[10.0.1.0/24]"
+    EXTERNAL_NET: "!$HOME_NET"
+
+default-rule-path: /etc/suricata/rules
+
+outputs:
+  - eve-log:
+      enabled: yes
+      filetype: regular
+      filename: /var/log/suricata/eve.json
+      types:
+        - alert
+        - dns
+        - http
+        - tls
+        - flow
+        - anomaly
