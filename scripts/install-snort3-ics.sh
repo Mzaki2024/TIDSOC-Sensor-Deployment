@@ -7,7 +7,7 @@ set -euo pipefail
 # Configuration
 INTERFACE="eth0"                # Update to your NIC
 HOME_NET="10.0.1.0/24"          # Protected network
-OINKCODE="your_oinkcode_here"   # Get from snort.org
+OINKCODE="d94e906f9d839665e4bb3f98f5cb3c783015b165"   # Get from snort.org
 SRC_DIR="/usr/local/src"
 
 # Install dependencies
