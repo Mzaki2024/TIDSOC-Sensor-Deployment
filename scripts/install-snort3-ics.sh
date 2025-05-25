@@ -40,13 +40,25 @@ tar -xzvf gperftools-2.9.1.tar.gz
 cd gperftools-2.9.1 && ./configure && make && sudo make install
 cd $SRC_DIR
 
-wget -q http://www.colm.net/files/ragel/ragel-6.10.tar.gz
-tar -xzvf ragel-6.10.tar.gz
-cd ragel-6.10 && ./configure && make && sudo make install
-cd $SRC_DIR
+# Ragel 6.10 with verification
+curl -LO --progress-bar http://www.colm.net/files/ragel/ragel-6.10.tar.gz
+
+# Verify file integrity
+if ! file ragel-6.10.tar.gz | grep -q "gzip compressed"; then
+    echo "Error: Downloaded Ragel tarball is not a valid gzip file"
+    exit 1
+fi
+
+# Extract with strict mode
+tar -xzvf ragel-6.10.tar.gz || { echo "Error extracting Ragel"; exit 1; }
+
+cd ragel-6.10
+./configure
+make
+sudo make install
+cd "$SRC_DIR"
 
 # Boost 1.77 (source only)
-cd ~/snort_src
 wget -q https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
 tar -xvjf boost_1_77_0.tar.bz2
 
