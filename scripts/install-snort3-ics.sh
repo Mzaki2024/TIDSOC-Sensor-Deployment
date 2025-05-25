@@ -8,7 +8,7 @@ set -euo pipefail
 INTERFACE="eth0"                # Update to your NIC
 HOME_NET="10.0.1.0/24"          # Protected network
 OINKCODE="d94e906f9d839665e4bb3f98f5cb3c783015b165"   # Get from snort.org
-SRC_DIR="/usr/local/src"
+SRC_DIR="/usr/local/src/snort"  # Standardized path
 
 # Install dependencies
 sudo apt update && sudo apt install -y \
