@@ -45,9 +45,10 @@ tar -xzvf ragel-6.10.tar.gz
 cd ragel-6.10 && ./configure && make && sudo make install
 cd $SRC_DIR
 
-# Install Boost 1.77
-wget -q https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.gz
-tar -xvzf boost_1_77_0.tar.gz
+# Boost 1.77 (source only)
+cd ~/snort_src
+wget -q https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+tar -xvjf boost_1_77_0.tar.bz2
 
 # Install Hyperscan
 wget -q https://github.com/intel/hyperscan/archive/refs/tags/v5.4.0.tar.gz
